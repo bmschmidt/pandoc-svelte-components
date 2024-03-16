@@ -1,5 +1,5 @@
 <script lang="ts">
-	/* component boilerplate */
+	/* pandoc-svelte-component boilerplate */
 	export let data;
 	export let settings;
 	settings;
@@ -33,7 +33,7 @@
 		}
 
 		var promise = navigator.clipboard.writeText(code);
-		promise.then((d) => {
+		promise.then(() => {
 			just_copied = true;
 			setTimeout(() => {
 				just_copied = false;

@@ -1,7 +1,9 @@
 <script lang="ts">
-	import raw from './test_file.json?raw';
-	const ast = JSON.parse(raw);
-	import Document from '$lib/Document.svelte';
+	import quire from './complex.md';
+	// We use Markdown style strong and italics.
+	import MarkdownStrong from '$lib/custom/MyStrong.svelte';
+	quire.quireComponents = [['strong', MarkdownStrong]];
+	import Document from '$lib/Doc.svelte';
 </script>
 
-<Document {ast} settings={{}} />
+<Document {quire} />
